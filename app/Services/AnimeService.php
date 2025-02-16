@@ -27,4 +27,18 @@ class AnimeService {
 
         return $response->json()['data'];
     }
+
+    public function getAnimeById($id) {
+
+        $response = Http::get('https://api.jikan.moe/v4/anime/'. $id .'/full');
+
+        return $response->json()['data'];
+    }
+
+    public function getEpisode($id) {
+        $response = Http::get('https://api.jikan.moe/v4/anime/'. $id.'/episodes');
+
+        return $response->json()['data'];
+
+    }
 }
